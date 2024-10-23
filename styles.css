@@ -5,20 +5,29 @@ body {
   }
 
   #title {
-    position: fixed;
-    top: 0%;
-    right: 5%;
-    padding-top: 5px;
+    text-align: right;
     font-size: 28px;
   }
 
-#header {
-    text-align: center;
-    margin: 5em;
-}
+  .menu{
+  text-align: right;
+    font-size: 12px;
+  }
 
 main {
-    margin: 100px;
-    font-family: sans-serif;
-    padding-top: 5px;
-  }
+  width: 80%;
+  max-width: 660px;
+  background-color: var(--background);
+  margin: 4rem auto;
+  border-radius: 10px;
+}
+  /* NB: REPLACE MAIN WITH 
+  
+    main {
+        width: 80%;
+        max-width: 660px;
+        background-color: var(--background);
+        margin: 4rem auto;
+        padding: 6rem;
+        border-radius: 10px;
+      }*/
