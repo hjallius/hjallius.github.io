@@ -1,0 +1,24 @@
+body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 2em;
+    background-color: ghostwhite;
+  }
+
+  #title {
+    position: fixed;
+    top: 0%;
+    right: 5%;
+    padding-top: 5px;
+    font-size: 28px;
+  }
+
+#header {
+    text-align: center;
+    margin: 5em;
+}
+
+main {
+    margin: 100px;
+    font-family: sans-serif;
+    padding-top: 5px;
+  }
