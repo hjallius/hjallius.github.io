@@ -21,7 +21,7 @@ body {
   }
 
 main {
-  position: relative;
+  position: sticky;
   width: 50%;
   max-width: 660px;
   background-color: var(--background);
