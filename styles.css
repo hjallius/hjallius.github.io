@@ -1,37 +1,31 @@
+/* WHOLE PAGE */
 body {
-    font-family: helvetica, arial, sans-serif;
-    margin: 2em;
-    background-color: ghostwhite;
-  }
+  font-family: helvetica, arial, sans-serif;
+  background-color: ghostwhite;
+}
 
-  #title {
-        display: block;    
-        position: fixed;
-        white-space: normal;
-        top: 0%;
-        right: 10%;
-        z-index: 1;
-        font-size: 28px;
-  }
+/* LOGO */
+#logo {
+  position: fixed;
+  margin: 0 21em;
+  width: 400px;
+  font-size: 28px;
+}
 
-  h2{
-    display: block; 
-    position: fixed;
-    white-space: normal;
-    top: 20%;
-    right: 10%;
-    z-index: 2;
-    font-size: 28px;
-  }
+/* PAGES */
+h2 {
+  position: fixed;
+  top: 6em;
+  margin: 0 21em;
+  width: 300px;
+  font-size: 28px;
+}
 
+/* ARTICLE LIST */
 main {
-  display: block; 
-  position: sticky;
-  white-space: normal;
-  width: 50%;
+  position: absolute;
+  top: 15em;
+  margin: 0 12em;
+  width: 27.5%;
   max-width: 660px;
-  background-color: var(--background);
-  margin: 2em auto;
-  border-radius: 0px;
-  z-index: 3;
 }
