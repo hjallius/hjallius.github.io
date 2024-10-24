@@ -5,6 +5,7 @@ body {
   }
 
   #title {
+        display: block;    
         position: fixed;
         top: 0%;
         right: 10%;
@@ -13,6 +14,7 @@ body {
   }
 
   h2{
+    display: block; 
     position: fixed;
     top: 20%;
     right: 10%;
@@ -21,6 +23,7 @@ body {
   }
 
 main {
+  display: block; 
   position: sticky;
   width: 50%;
   max-width: 660px;
