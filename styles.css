@@ -24,8 +24,15 @@ h2 {
 /* ARTICLE LIST */
 main {
   position: absolute;
-  top: 15em;
+  top: 14em;
   margin: 0 12em;
   width: 27.5%;
   max-width: 660px;
+}
+
+/* HOMEPAGE IMAGE */
+#homepage-img {
+  position: fixed;
+  margin: 0 36.8em;
+  margin-top: 14.5em;
 }
