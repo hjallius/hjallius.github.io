@@ -1,10 +1,12 @@
-/* WHOLE PAGE */
+/* HOMEPAGE */
+
+/* Rules Applicable to Whole Page */
 body {
   font-family: helvetica, arial, sans-serif;
   background-color: ghostwhite;
 }
 
-/* LOGO */
+/* Logo */
 #logo {
   position: fixed;
   margin: 0 21em;
@@ -12,7 +14,7 @@ body {
   font-size: 28px;
 }
 
-/* PAGES */
+/* Pages Link */
 h2 {
   position: fixed;
   top: 6em;
@@ -21,7 +23,7 @@ h2 {
   font-size: 28px;
 }
 
-/* ARTICLE LIST */
+/* Article List */
 main {
   position: absolute;
   top: 14em;
@@ -30,7 +32,7 @@ main {
   max-width: 660px;
 }
 
-/* HOMEPAGE IMAGE */
+/* Image */
 #homepage-img {
   position: fixed;
   margin: 0 36.8em;
