@@ -15,7 +15,7 @@ body {
 }
 
 /* Pages Link */
-#links {
+#homelinks {
   position: fixed;
   top: 7.9em;
   margin: 0 30.9em;
@@ -37,4 +37,16 @@ main {
   position: fixed;
   margin: 0 36.8em;
   margin-top: 14.5em;
+}
+
+
+/* ABOUT PAGE */
+
+/* Pages Link */
+#aboutlinks {
+  position: fixed;
+  top: 7.9em;
+  margin: 0 30.9em;
+  width: 300px;
+  font-size: 19px;
 }
