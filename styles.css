@@ -2,6 +2,8 @@
 
 /* Rules Applicable to Whole Page */
 body {
+  width: 1300px;
+  margin: 0 auto;
   font-family: helvetica, arial, sans-serif;
   background-color: ghostwhite;
 }
@@ -34,7 +36,7 @@ main {
 
 /* Image */
 #homepage-img {
-  position: fixed;
+  float: left;
   margin: 0 36.8em;
   margin-top: 14.5em;
 }
