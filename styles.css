@@ -2,8 +2,6 @@
 
 /* Rules Applicable to Whole Page */
 body {
-  width: 1300px;
-  margin: 0 auto;
   font-family: helvetica, arial, sans-serif;
   background-color: ghostwhite;
 }
@@ -27,6 +25,7 @@ body {
 
 /* Article List */
 main {
+  position: absolute;
   top: 14em;
   margin: 0 12em;
   width: 25%;
@@ -35,8 +34,7 @@ main {
 
 /* Image */
 #homepage-img {
-
-  float: left;
+  position: fixed;
   margin: 0 36.8em;
   margin-top: 14.5em;
 }
@@ -46,7 +44,7 @@ main {
 
 /* Pages Link */
 #homelinks {
-  position: absolute;
+  position: fixed;
   top: 7.9em;
   margin: 0 30.9em;
   width: 300px;
