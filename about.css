@@ -1,0 +1,56 @@
+/* Desktop/Default */
+body {
+    background-color: ghostwhite;
+    }
+    
+    .page {
+    font-family: helvetica, arial, sans-serif;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 30px 10px;
+    }
+    
+    .logo {
+    position: fixed;
+    top: 30px;
+    right: 430px;
+    font-size: 30px;
+    }
+    
+    .menu {
+    position: fixed;
+    top: 200px;
+    right: 512px;
+    font-size: 28px;
+    }
+    
+    .image {
+    position: fixed;   
+    top: 255px;
+    right: 180px;
+    }
+    
+    .posts {
+    position: absolute;
+    max-width: 250px;
+    top: 250px;
+    }
+    
+    /* Mobile */
+    
+    @media only screen and (max-width: 1000px) {
+    
+        
+        .menu {
+          right: 510px;
+        }
+  
+        .posts {
+        max-width: 500px;
+        right: 280px;
+        }    
+        
+        .image {
+        top: 450px;
+        }
+        }
