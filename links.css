@@ -39,7 +39,10 @@ top: 250px;
 /* Mobile */
     
 @media only screen and (max-width: 1000px) {
-     
+
+.logo {
+position: absolute;
+}
 .menu {
 position: absolute;
 top: 210px;  
@@ -54,6 +57,6 @@ right: 275px;
         
 .image {
 position: absolute;
-top: 850px;
+top: 1150px;
 }
 }
