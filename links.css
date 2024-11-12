@@ -41,16 +41,19 @@ top: 250px;
 @media only screen and (max-width: 1000px) {
      
 .menu {
+position: absolute;
 top: 210px;  
 right: 510px;
 }
   
 .posts {
+position: absolute;
 max-width: 500px;
-right: 370px;
+right: 275px;
 }    
         
 .image {
-top: 950px;
+position: absolute;
+top: 850px;
 }
 }
