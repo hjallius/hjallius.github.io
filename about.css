@@ -60,10 +60,6 @@ right: 62px;
 }    
             
 .image {
-position: absolute;
-height: -1px;
-width: -1px;
-top: 750px;
-right: 500px
+display: none;
 }
 }
