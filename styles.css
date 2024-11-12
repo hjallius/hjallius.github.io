@@ -45,32 +45,27 @@ body {
   /* Mobile */
   
   @media only screen and (max-width: 1000px) {
-  
-      
-      .menu {
-        top: 210px;
-        right: 510px;
-      }
 
-      .posts {
-      max-width: 500px;
-      right: 735px;
-      }    
+.menu {
+top: 210px;
+right: 510px;
+}
 
-      .ptitle {
-      font-size: 18px;
-      right: 30px;
-      }
-      
-      .image {
-      top: 20px;
-      }
+.posts {
+max-width: 700px;
+top: 270px;
+right: 445px;
+}    
 
-      iframe {
-        position: fixed;   
-        top: 350px;
-        height: 500px;
-        width: 600px;
-        right: 180px;
-      }
-      }
+.image {
+top: 350px;
+}
+
+iframe {
+position: fixed;   
+top: 350px;
+height: 500px;
+width: 600px;
+right: 180px;
+}
+}
