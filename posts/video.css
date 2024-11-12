@@ -42,24 +42,32 @@ top: 255px;
 right: 180px;
 }
   
-/* Mobile */
-  
 @media only screen and (max-width: 1000px) {
-  
-.menu {
-top: 210px;
-right: 510px;
-}
 
-.image {
-top: 20px;
+.logo {
+position: absolute;
+top: 10px;
+right: 15px;
 }
+          
+.menu {
+position: absolute;
+top: 175px;  
+right: 97px;
+}
+            
+.posts {
+position: absolute;
+max-width: 300px;
+top: 220px;
+right: 62px;
+}   
 
 iframe {
 position: fixed;   
-top: 300px;
-height: 500px;
-width: 600px;
-right: 180px;
+top: 250px;
+height: 200px;
+width: 300px;
+right: 30px;
 } 
 }
