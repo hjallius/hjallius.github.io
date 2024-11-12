@@ -52,20 +52,20 @@ right: 15px;
           
 .menu {
 position: absolute;
-top: 187px;  
+top: 190px;
 right: 97px;
 }
             
 .posts {
 position: absolute;
 max-width: 300px;
-top: 220px;
+top: 230px;
 right: 62px;
 }   
 
 iframe {
 position: fixed;   
-top: 250px;
+top: 260px;
 height: 200px;
 width: 300px;
 right: 30px;
