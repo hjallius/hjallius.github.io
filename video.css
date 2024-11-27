@@ -30,7 +30,7 @@ body {
     right: 180px;
     }
     
-    .posts {
+    .two {
     position: absolute;
     max-width: 250px;
     top: 250px;
@@ -56,7 +56,7 @@ body {
     top: 20px;
     }
   
-    .posts {
+    .two {
     display: none;
     }
 
