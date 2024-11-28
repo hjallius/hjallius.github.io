@@ -3,17 +3,99 @@
 <head>
     <meta charset='UTF-8' />
     <title>Friday Night Salary Man</title>
-    <link rel="stylesheet" href= "../video.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
+
+<style>
+
+    /* Formatting  */
+
+    body {
+        background-color: ghostwhite;
+        font-family: helvetica, arial, sans-serif;
+        max-width: 750px;
+        margin: 0 auto;
+        padding: 30px 10px;
+    }
+
+    a:link {
+        color: rgb(0, 0, 0); 
+        text-decoration: none;
+    } 
+    
+    a:visited {
+        color: rgb(0, 0, 0); 
+        text-decoration: none;
+    }
+
+    /* Positioning */
+    
+    #logo {
+        position: fixed;
+        top: 30px;
+        right: 432px;
+        font-size: 30px;
+    }
+
+    #menu {
+        position: fixed;
+        top: 200px;
+        right: 483px;
+        font-size: 28px;
+    }
+
+    #posts {
+        position: absolute;
+        max-width: 250px;
+        top: 260px;
+    }
+
+    iframe {
+        position: fixed;   
+        top: 255px;
+        right: 180px;
+    }
+
+    /* Mobile */
+
+    @media only screen and (max-width: 1000px) {
+    
+    #logo {
+        position: absolute;
+        font-size: 20px;
+        top: 10px;
+        right: 110px; 
+    }
+
+    #menu {
+        position: absolute;
+        font-size: 20px;
+        top: 137px;
+        right: 130px;
+    }
+
+    #posts {
+        display: none;
+    }
+
+    iframe {
+        position: fixed;   
+        top: 180px;
+        height: 200px;
+        width: 300px;
+        right: 45px;
+    }
+
+    }
+
+</style>
+
 <body>
-<div class="page">
-    <!-- LOGO -->
-    <div class="logo"><a href="https://fridaynightsalaryman.com/"><h1>Friday Night <br> Salary Man</h1></a></div> 
-    <!-- NAVIGATION MENU -->
-    <div class="menu"> <a href="../about"><strong>About</strong></a> / <a href="../links"><strong>Links</strong></a> / <a href="../credits"><strong>Credits</strong></a></div>
-    <style> a:link {color: rgb(0, 0, 0); text-decoration: none;} a:visited {color: rgb(0, 0, 0); text-decoration: none;} </style>
-    <!-- VIDEO POST-->
-    <div class="two"><strong>02. Alvvays - Lollipop (Ode to Jim) - Central Park Summerstage, NY 6/26/2019</strong>
+    <div id="logo"><a href="https://fridaynightsalaryman.com/"><h1>Friday Night <br> Salary Man</h1></a></div>
+    <div id="menu"><a href="./about"><strong>About</strong></a> / <a href="./links"><strong>Links</strong></a> / <a href="./credits"><strong>Credits</strong></a></div>
+    <div id="posts"><strong>02. Alvvays - Lollipop (Ode to Jim) - Central Park Summerstage, NY 6/26/2019</strong>
         <p>Saw Jim Reid in the corridor /
         And I wondered if he could ever see me that way /
         He was on my list at the grocery store /
@@ -65,8 +147,8 @@
         Wait for you /
         Wait for you</p>
         <strong>*******</strong>
-        <p>2024-11-26; Birmingham</p>
+        <p>2024-11-26</p>
     </div>
     <iframe width="600px" height="500px" src="https://www.youtube.com/embed/SQGJT4JVt6I?si=fvEcVof73GE5Ns9r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+</body>
 </html>

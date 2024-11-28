@@ -3,21 +3,98 @@
 <head>
     <meta charset='UTF-8' />
     <title>Friday Night Salary Man</title>
-    <link rel="stylesheet" href= "../styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 
+<style>
+
+    /* Formatting  */
+
+    body {
+        background-color: ghostwhite;
+        font-family: helvetica, arial, sans-serif;
+        max-width: 750px;
+        margin: 0 auto;
+        padding: 30px 10px;
+    }
+
+    a:link {
+        color: rgb(0, 0, 0); 
+        text-decoration: none;
+    } 
+    
+    a:visited {
+        color: rgb(0, 0, 0); 
+        text-decoration: none;
+    }
+
+    /* Positioning */
+    
+    #logo {
+        position: fixed;
+        top: 30px;
+        right: 432px;
+        font-size: 30px;
+    }
+
+    #menu {
+        position: fixed;
+        top: 200px;
+        right: 483px;
+        font-size: 28px;
+    }
+
+    #posts {
+        position: absolute;
+        max-width: 250px;
+        top: 260px;
+    }
+
+    #image {
+        position: fixed;   
+        top: 255px;
+        right: 180px;
+    }
+
+    /* Mobile */
+
+    @media only screen and (max-width: 1000px) {
+    
+    #logo {
+        position: absolute;
+        font-size: 20px;
+        top: 10px;
+        right: 110px; 
+    }
+
+    #menu {
+        position: absolute;
+        font-size: 20px;
+        top: 137px;
+        right: 130px;
+    }
+
+    #posts {
+        position: absolute;
+        max-width: 300px;
+        top: 180px;
+        right: 42px;
+    }
+    
+    #image {
+        display: none;
+    }
+
+    }
+
+</style>
+
 <body>
-<div class="page">
-    <!-- LOGO -->
-    <div class="logo"><a href="https://fridaynightsalaryman.com/"><h1>Friday Night <br> Salary Man</h1></a></div> 
-    <!-- NAVIGATION MENU -->
-    <div class="menu"> <a href="../about"><strong>About</strong></a> / <a href="../links"><strong>Links</strong></a> / <a href="../credits"><strong>Credits</strong></a></div>
-    <style> a:link {color: rgb(0, 0, 0); text-decoration: none;} a:visited {color: rgb(0, 0, 0); text-decoration: none;} </style>
-    <!-- POST LIST -->
-    <div class="content"></div>
-        <div class="one">
-        <strong>01. A Procession of Fifty Horses</strong>
+    <div id="logo"><a href="https://fridaynightsalaryman.com/"><h1>Friday Night <br> Salary Man</h1></a></div>
+    <div id="menu"><a href="./about"><strong>About</strong></a> / <a href="./links"><strong>Links</strong></a> / <a href="./credits"><strong>Credits</strong></a></div>
+    <div id="posts"><strong>01. A Procession of Fifty Horses</strong>
         <br><br>
         <p>A friend told me the other day that on Bennett’s Hill, between the Wellington public house and the offices of a landscape architect, is a thin and deep-shadowed alleyway. </p>
         <p>There, he said, one thousand rats are buried under the pavement, all murdered using a Spear & Jackson Square Head Neverbend Digging Spade.</p>
@@ -53,9 +130,8 @@
         <p>Yours,</p>
         <p>A hopeless romantic </p>
         <strong>*******</strong>
-        <p>2024-11-22; Birmingham</p>
-        </div> 
-        <div class="image"><img src="../images/001.PNG" alt="A pixelated, black and white photograph of a procession of horses along a road" height="500px" width="600px"></div>
+        <p>2024-11-22</p>
+    <div id="image"><img src="../images/001.PNG" alt="A pixelated, black and white photograph of a procession of horses along a road" height="500px" width="600px"></div>
     </div>
-  </body>
+</body>
 </html>
