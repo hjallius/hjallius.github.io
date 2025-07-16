@@ -1,107 +1,97 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-    <title>About</title>
+    <title>About - fridaynightsalaryman</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
+    <style>
+        body {
+            display: block;
+            padding: 0px 20px;
+            max-width: 550px;
+            margin: 0 auto;
+            font-family: helvetica, arial, sans-serif;
+        }
+
+        .break {
+            position: relative;
+            height: 4px;
+        }
+
+        .site-title {
+            line-height: 2rem;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .nav-header {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+        }
+
+        .nav-header a {
+            text-decoration: underline;
+            color: black;
+            font-size: 1rem;
+            line-height: 2rem;
+            margin: 10px;
+        }
+
+        .paragraph-container h2 {
+            font-size: 30px;
+        }
+
+        .paragraph-container p {
+            font-size: 1.3rem;
+           
+        }
+        .site-container {
+            margin-top: 20px;
+        }
+
+        .latest-update {
+            margin: 20px 0;
+        }
+
+        li {
+            list-style-type: square;
+        }
+
+    </style>
 </head>
-
-<style>
-    body { 
-        display: block;
-        padding: 0px 20px;
-        max-width: 550px;
-        margin: 0 auto;
-        font-family: helvetica, arial, sans-serif;
-    }
-
-    .break {
-        position: relative;
-        height: 4px;
-    }
-
-    .break::after {
-        background: linear-gradient(to right, #000000 100%, #000000 33.33%, #000000 33.33%, #000000 66.66%, #000000 66.66%);
-        position: absolute;
-        content: '';
-        height: 4px;
-        top: 0;
-        right: 0;
-        left: 0;
-    }
-
-    .site-title {
-        line-height: 2rem;
-        font-size: 1.5rem;
-    }
-
-    .latest-posts-container>ul {
-        padding: 0;
-        line-height: 1.4rem;
-    }
-
-    .latest-posts-container li {
-        display: block; /* removes bullet point before list entry */
-        padding-bottom: 15px;
-    }
-
-    .latest-posts-container {
-        margin-top: 20px ;
-    }
-
-    .latest-update {
-        margin: 20px 0;
-        font-style: italic;
-    }
-    
-    .paragraph-container {
-        line-height: 1.5rem;
-    }
-
-    .footer-menu {
-        margin-top: 20px;
-    }
-
-    .footer-menu li {
-        margin-left: 0;
-        display: inline; /* removes bullet point before list entry; keeps list to one line */
-        padding-right: 20px;
-    }
-
-    li {
-        list-style-type: square;
-    }
-
-</style>
 
 <body>
 
     <main>
-        <article>
-            <div class="post-container">
-                <p class="nav-line"> <a class="nav-link" href="https://fridaynightsalaryman.com/">fridaynightsalaryman</a> &gt; About</a></p>
-                <div class="post-header"> <h1 class="post-title">About</h1> 
-                <p>Updated 2025-02-17 @ 16:46 // <a href="./about">About</a></p></div> 
-                <div class="break"></div>
-                <div class="paragraph-container">
-                    <p>Hello, I'm <a href="https://github.com/hjallius"><u>Hjallius</u></a>.</p> 
-                    <p>This is my digital miscellany, somewhere to put the things I have nowhere else for. It was <s>cobbled together by hand</s> written in HTML and CSS on a second hand 2019 MacBook Pro, running Sequoia 15.0.1 using Visual Studio Code.</p>
-                    <p>fridaynightsalaryman dot com is published to the web using GitHub Pages and tested on Firefox for Mac and Safari for IOS. You can find the source code <a href="https://github.com/hjallius/hjallius.github.io"><u>here</u></a>.</p>
-                    <p>Thoughts, words and deeds by Hjallius, the artist formerly known as the Nightstick Hockey Men.</p>
-                    <p>Images by Tobe Funkout, formerly of this Parish.</p>
-                </div>
+        <div class="site-container">
+            <div class="nav-header">
+                <h1 class="site-title">Friday Night Salary Man.</h1>
+                <strong>
+                    <a href="./about">About</a>
+                    <a href="./archive">Archive</a>
+                    <a href="https://fieldreport.co.uk/">Blog</a>
+                </strong>
             </div>
-        </article>
+        <div class="latest-update">
+           <p>Updated 2025-04-26 @ 10:01</p>
+        </div>
+        <div class="paragraph-container">
+            <h2>About This Website</h2>
+            <p>Written in HTML and CSS on a second hand 2019 MacBook Pro, running Sequoia 15.0.1 using Visual Studio Code. The source code is <a href="https://github.com/hjallius/hjallius.github.io"><u>here</u></a>.</p>
+            <p>Published to the web using GitHub Pages and tested on Firefox for Mac and Safari for IOS.</p>
+            <p>Inspired by: <a href="https://sanlive.com/">sanlive.com</a>, <a href="https://sizeof.cat/">sizeof(cat)</a>, <a href="https://mnmlist.com/">mnmlist</a></p>
+            <p>No cookies, tracking or data collection.</p>
+        </div>
     </main>
 
     <div class="break"></div>
 
     <footer>
-        <p><em><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p> 
+        <p>© 2024-2025</p>
     </footer>
-    
+
 </body>
 
 </html>

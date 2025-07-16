@@ -1,139 +1,94 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <title>fridaynightsalaryman</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
+    <style>
+        
+        body {
+            display: block;
+            padding: 0px 20px;
+            max-width: 550px;
+            margin: 0 auto;
+            font-family: helvetica, arial, sans-serif;
+        }
+
+        .break {
+            position: relative;
+            height: 4px;
+        }
+
+        .site-title {
+            line-height: 2rem;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .nav-header {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+        }
+
+        .nav-header a {
+            text-decoration: underline;
+            color: black;
+            font-size: 1rem;
+            line-height: 2rem;
+            margin: 10px;
+        }
+
+        .paragraph-container h2 {
+            font-size: 30px;
+        }
+
+        .paragraph-container p {
+            font-size: 1.3rem;
+           
+        }
+        .site-container {
+            margin-top: 20px;
+        }
+
+        .latest-update {
+            margin: 20px 0;
+        }
+
+        li {
+            list-style-type: square;
+        }
+
+    </style>
 </head>
-
-<style>
-    
-    body { 
-        display: block;
-        padding: 0px 20px;
-        max-width: 550px;
-        margin: 0 auto;
-        font-family: helvetica, arial, sans-serif;
-    }
-
-    .break {
-        position: relative;
-        height: 4px;
-    }
-
-    .break::after {
-        background: linear-gradient(to right, #000000 100%, #000000 33.33%, #000000 33.33%, #000000 66.66%, #000000 66.66%);
-        position: absolute;
-        content: '';
-        height: 4px;
-        top: 0;
-        right: 0;
-        left: 0;
-    }
-
-    .site-title {
-        line-height: 2rem;
-        font-size: 1.5rem;
-    }
-
-    .site-container ul {
-        padding: 0;
-        line-height: 1.4rem;
-    }
-
-    .site-container {
-        margin-top: 20px ;
-    }
-
-    .latest-update {
-        margin: 20px 0;
-    }
-
-    .footer-menu {
-        margin-top: 20px;
-    }
-
-    .footer-menu li {
-        margin-left: 0;
-        display: inline; /* removes bullet point before list entry; keeps list to one line */
-        padding-right: 20px;
-    }
-
-    li {
-        list-style-type: square;
-    }
-
-    .lower-nav-container {
-        margin-top: 20px;
-    }
-
-    .lower-nav-container li {
-        margin-left: 0;
-        display: inline;
-        padding-right: 20px;
-    }
-
-    .button {
-    display: inline-block;
-    text-align: center;
-    width: 37%;
-    padding: 3px 3px;
-    border: 0px solid #000000;
-    border-radius: 0px;
-    margin-left: 30px;
-    background: #000000;
-    background: #000000;
-    font:  italic normal bold 11px courier new;
-    color: #ffffff;
-    text-decoration: none;
-    }
-
-    .button:hover,
-    .button:active,
-    .button:focus {
-    color: #ffffff;
-    text-decoration: none;
-    }
-
-    .button:before{
-    content:  "\0000a0";
-    display: inline-block;
-    height: 24px;
-    width: 24px;
-    line-height: 24px;
-    margin: 0 4px -6px 0px;
-    position: relative;
-    top: 0px;
-    left: -2px;
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAACyklEQVRIie2US2xMURyHv3PudObOdCoTz7aqjbRISEQiUUkpEiJttFLRElZC2EgsLKykSyyslBB04VESC0wrZUcQZki1TaMNUfFuqKDTedzHzLGYaWuYPrRLfquT8z/3+875n5sD/zNOxNCgsnSzVylKADlpmOCjyLL7bj24NTznSMGX+qbJO1s2eHKlGPX7MaOAh21GrKeXfcCFNIGmsatmvSc3FE6wszqbyTiCnSbFhQ7djquDBEYEEiBLE96Nq3XmztFoag6j1N/D27tN9mz1kuOR3l9raf1eV6qTP1ujqSXMRB2BToP2HpM9tV5khtv7Y2pIctk/viTYadLRY7F7a2Z4RsGQZLx2JeHJtmhj/HejltaV6szwaVy4+edJAp0Gj9qNMXc+riBqKLpemLhdItmulCXQYfDsuUnMUPT1xwH6gUbgMHDKtNX7XzmOjPCYouFyiLoKD0X5Dh63GxxvHEDTBHPnaOytyyFmKM5dG7za3Wtdt76pXbkurfyrlXj/yYifr1hRLVuD/kRGQSSqONkUYlulh8K8ZHnlMhcrl7nS1nnc4vaDp8aTmhn6lU0LXRIEGpTc/2GubfwYWV61oupAc7A5vUWRWApeMQIfLXeDsTNlOc4jNbN02RayqO8dQApY43NSM0vfHxdy1fAdKEhEooqGSyG2V2ZTmD82HOg/fXUwv9zndALMzJIUuLThYrnPKQVUDQsMU3UcOzvAjk3ZzMvTMhJ/i2nbStdTD1exO31DTimQAg+k7kApde7VW8tXf+J72YQeO0EioejqClvMd2u8jsb5biteRGwWeBx0h23iikBy6SRTTz0vyzpuHiryVn+zFYO2wiGhxO3g6JvBtg8xu6w16I9NqB+Zco97FOQtank0YM2UiCUuieOdEbcv9kX9X6z49tag/8eUTjCU2sW1hHPM6UAB0CcRn1sCN6aK/ZfyE3XOHJJ9fP1iAAAAAElFTkSuQmCC") no-repeat left center transparent;
-    background-size: 100% 100%;
-    }   
-
-</style>
-
 <body>
- 
     <main>
-        <div class="site-container"> 
-            <h1 class="site-title">Friday Night Salary Man. <a class="button" href="#">RE: 10 before 10 @ The Cori Tap</a></h1> 
-            <div class="break"></div> 
-            <p class="latest-update"> Updated 2025-04-26 @ 10:01 <strong>// </strong><a href="./about">About</a>  <strong>// </strong><a href="./archive">Archive</a></p> 
-            <p><img src="./images/home.png" height="255px"; width="100%"></p>
+        <div class="site-container">
+            <div class="nav-header">
+                <h1 class="site-title">Friday Night Salary Man.</h1>
+                <strong>
+                    <a href="./about">About</a>
+                    <a href="./archive">Archive</a>
+                    <a href="https://fieldreport.co.uk/">Blog</a>
+                </strong>
+            </div>
+        <div class="latest-update">
+           <p>Last Updated: 2025-07-14 @ 22:08</p>
+        </div>
+        <div class="paragraph-container">
+            <p><img src="./images/home.png" height="255px" width="100%"></p>
         </div>
     </main>
-    
-    <div class="break"></div> 
+
+    <div class="break"></div>
 
     <footer>
-        <p>2024-2025 <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p>
+        <p>© 2024-2025</p>
     </footer>
-        
-    </footer>
-    
-</body>
 
+</body>
 </html>
+
 
 <!-- 🐈‍⬛ Blair <3 2024-12-25 -->
