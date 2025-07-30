@@ -1,110 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Vocal Stim Roster - fridaynightsalaryman.com</title>
+    <title>Stim - fridaynightsalaryman.com</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <style>
+        header {
+            margin-top:50px;
+        }
+
         body {
             display: block;
-            padding: 0px 20px;
+            font-family: helvetica, arial, sans-serif;
             max-width: 550px;
             margin: 0 auto;
-            font-family: helvetica, arial, sans-serif;
-        }
-
-        .break {
-            position: relative;
-            height: 4px;
-        }
-
-        .site-title {
-            line-height: 2rem;
-            font-size: 1.5rem;
-            margin: 0;
-        }
-
-        .nav-header {
-            display: flex;
-            align-items: baseline;
-            gap: 15px;
+            padding: 0px 20px;
         }
 
         .nav-header a {
-            text-decoration: underline;
-            color: black;
+            color:black;
+            display: inline-block;
             font-size: 1rem;
-            line-height: 2rem;
-            margin: 10px;
+            margin-right: 20px;
+            text-decoration: underline;
         }
 
-        .paragraph-container h2 {
+        h2 {
             font-size: 30px;
         }
 
-        .paragraph-container p {
+        p {
             font-size: 1.3rem;
-           
         }
-        .site-container {
+
+        main {
             margin-top: 20px;
         }
 
-        .latest-update {
-            margin: 20px 0;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 5fr));
+            gap: 1rem;                              
+            width: 100%;
+            max-width: 600px;                     
         }
 
-        li {
-            list-style-type: square;
+        .sound-button {
+            background: none;                     
+            border: none;                         
+            padding: 10px;                          
+            cursor: pointer;                     
         }
 
+        .sound-button img {
+            height: 200px;
+            width: 100%;                           
+            border-radius: 7px;                 
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); 
+            transition: transform 0.1s ease;        
+        }
+
+        .sound-button:active img {
+             transform: scale(0.97);                 
+        }
     </style>
 </head>
 
 <body>
-
+    <header>
+        <div class="side-banner">
+            <a href="https://fridaynightsalaryman.com/"><img id="random-banner" src="" height="130px" width="100%"></a>
+        </div>
+    </header>
     <main>
-        <div class="site-container">
-            <div class="nav-header">
-                <h1 class="site-title">Friday Night Salary Man.</h1>
-                <strong>
-                    <a href="./about">About</a>
-                    <a href="./archive">Archive</a>
-                    <a href="https://fieldreport.co.uk/">Blog</a>
-                </strong>
-            </div>
-        <div class="latest-update">
-           <p>Last Updated: 2025-07-16 @ 20:11</p>
+        <div class="nav-header">
+            <strong>
+                <a href="./about">About</a>
+                <a href="./archive">Archive</a>
+            </strong>
         </div>
-        <div class="paragraph-container">
-            <h2>Vocal Stim Roster</h2>
-            <p><iframe width="100%" height="375px" src="https://www.youtube.com/embed/tK49_3s61lk?si=be9VQKQYlkJmQyu6&amp;start=4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%" height="375px" src="https://www.youtube.com/embed/H9VVkwRb_7M?si=w_BtaaW77Iu64OYS&amp;start=17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%" height="375px" src="https://www.youtube.com/embed/5k_jxbBHrYY?si=xOAZFyfmO3FLXAXD&amp;start=17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%" height="375px" src="https://www.youtube.com/embed/qag6w_Tp50A?si=1ElIxl-YNgNiFmze&amp;start=8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%" height="375px" src="https://www.youtube.com/embed/PTdxPliBdZs?si=l-zvKrGwwEwyKJVv&amp;start=35" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%" height="375px" src="https://www.youtube.com/embed/5k_jxbBHrYY?si=Y92FMUD5mSLlpfaZ&amp;start=146" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%" height="375px" src="https://www.youtube.com/embed/ZTqb_qEtVDc?si=Udnv7iSjkUE3PCYs&amp;start=74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%" height="375px" src="https://www.youtube.com/embed/hV8JFj17AtY?si=0eswKCCf3wLtTE8e&amp;start=34" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%" height="375px" src="https://www.youtube.com/embed/1i739SyCu9I?si=_ETzmEChsmYFyEFS&amp;start=11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%" height="375px" src="https://www.youtube.com/embed/RNZ5qylG3qk?si=y6IKfSsLnWAtT1_-&amp;start=170" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%" height="375px" src="https://www.youtube.com/embed/xumX7piY-u8?si=xS_bjQM7-w-6SOy8&amp;start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%" height="375px" src="https://www.youtube.com/embed/McXPssyYlO0?si=X3XNc_HSJeKJGxcV&amp;start=164" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%" height="375p" src="https://www.youtube.com/embed/kurAJvAHB6I?si=Bret9D4p_LPK7o7r&amp;start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%" height="375px" src="https://www.youtube.com/embed/-vwIRhx2hcY?si=azgYGhpXwEeTRid4&amp;start=9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            <p><iframe width="100%"; height="375px" src="https://www.youtube.com/embed/BTD9lIwsO48?si=cIT0T8_eJSjfqGM4&amp;start=29" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-            </p>
-        </div>
+            <h2>Vocal Stim Soundboard</h2>
+                <div class="grid">
+                <button class="sound-button" onclick="playSound('sounds/another-gay-man.mp3')">
+                <img src="./images/00120080.0001.jpg" alt="Another Gay Man">
+                </button>
+
+                <button class="sound-button" onclick="playSound('sounds/bogos-binted.mp3')">
+                <img src="images/Screenshot 2025-07-28 at 18.10.03.png" alt="Bogos Binted">
+                </button>
+
+                <button class="sound-button" onclick="playSound('sounds/breaker-breaker-doorman.mp3')">
+                <img src="images/Screenshot 2025-07-28 at 18.07.46.png" alt="Come on Back">
+                </button>
+
+                <button class="sound-button" onclick="playSound('sounds/come-on-momma.mp3')">
+                <img src="images/button2.png" alt="Come on Momma">
+                </button>
+
+                <button class="sound-button" onclick="playSound('sounds/dallas-mower-expo.mp3')">
+                <img src="images/button2.png" alt="Dallas Mower Expo">
+                </button>
+
+                <button class="sound-button" onclick="playSound('sounds/eurotrip.mp3')">
+                <img src="images/Screenshot 2025-07-28 at 18.28.15.png" alt="Myyyy Baby">
+                </button>
+
+                <button class="sound-button" onclick="playSound('sounds/jan-get-out-lady.mp3')">
+                <img src="images/button2.png" alt="Get Out, Lady">
+                </button>
+
+                <button class="sound-button" onclick="playSound('sounds/my-daddy-could-become-my-father-soap.mp3')">
+                <img src="images/button2.png" alt="My Daddy Could Become My Father">
+                </button>
+
+                <button class="sound-button" onclick="playSound('sounds/oil-on-the-road.mp3')">
+                <img src="images/button2.png" alt="Oil on the Road">
+                </button>
+
+                <button class="sound-button" onclick="playSound('sounds/puh-deh-uh-uh-uh-uh-zhoom-zhoom.mp3')">
+                <img src="images/a1jg53.gif" alt="Puhhuhuhuh Dehehehehehe">
+                </button>
+
+                <button class="sound-button" onclick="playSound('sounds/seaking.mp3')">
+                <img src="images/button2.png" alt="Seaking">
+                </button>
+
+                <button class="sound-button" onclick="playSound('sounds/yablubublubublub.mp3')">
+                <img src="images/button2.png" alt="Yohbujoabjob">
+                </button>
+                </div>
     </main>
-
-    <div class="break"></div>
-
+    <br>
     <footer>
-        <p>© 2024-2025</p>
+        Updated 2025-07-28 @ 22:55 // © 2024-2025
     </footer>
 
+<script>
+    const bannerImages = [
+        './images/Add a heading(1).gif',
+        './images/Add a heading(2).gif',
+        './images/Add a heading(3).png',
+        './images/Add a heading(4).png',
+        './images/Add a heading(5).png',
+        './images/Add a heading(6).gif',
+    ];
+    const randomImage = bannerImages[Math.floor(Math.random() * bannerImages.length)];
+    document.getElementById('random-banner').src = randomImage;
+
+    function playSound(src) {
+    const audio = new Audio(src);           
+    audio.play().catch(err => {
+    console.error('Playback failed:', err);
+    });
+    }
+    </script>
 </body>
-
 </html>
-

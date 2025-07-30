@@ -1,93 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Yonder - fridaynightsalaryman.com</title>
+    <title>Archive - fridaynightsalaryman.com</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <style>
+        header {
+            margin-top:50px;
+        }
+
         body {
             display: block;
-            padding: 0px 20px;
+            font-family: helvetica, arial, sans-serif;
             max-width: 550px;
             margin: 0 auto;
-            font-family: helvetica, arial, sans-serif;
-        }
-
-        .break {
-            position: relative;
-            height: 4px;
-        }
-
-        .site-title {
-            line-height: 2rem;
-            font-size: 1.5rem;
-            margin: 0;
-        }
-
-        .nav-header {
-            display: flex;
-            align-items: baseline;
-            gap: 15px;
+            padding: 0px 20px;
         }
 
         .nav-header a {
-            text-decoration: underline;
-            color: black;
+            color:black;
+            display: inline-block;
             font-size: 1rem;
-            line-height: 2rem;
-            margin: 10px;
+            margin-right: 20px;
+            text-decoration: underline;
         }
 
-        .paragraph-container h2 {
+        h2 {
             font-size: 30px;
         }
 
-          .paragraph-container h3 {
-            font-size: 30px;
-        }
-
-        .paragraph-container p {
+        p {
             font-size: 1.3rem;
-           
         }
-        .site-container {
+
+        main {
             margin-top: 20px;
         }
-
-        .latest-update {
-            margin: 20px 0;
-        }
-
-        li {
-            list-style-type: square;
-        }
-
     </style>
 </head>
 
 <body>
+    <header>
+        <div class="side-banner">
+            <a href="https://fridaynightsalaryman.com/"><img id="random-banner" src="" height="130px" width="100%"></a>
+        </div>
+    </header>
     <main>
-        <div class="site-container">
-            <div class="nav-header">
-                <h1 class="site-title">Friday Night Salary Man.</h1>
-                <strong>
-                    <a href="./about">About</a>
-                    <a href="./archive">Archive</a>
-                    <a href="https://fieldreport.co.uk/">Blog</a>
-                </strong>
-            </div>
-        <div class="latest-update">
-           <p>Last Updated: 2025-07-16 @ 19:28</p>
+        <div class="nav-header">
+            <strong>
+                <a href="./about">About</a>
+                <a href="./archive">Archive</a>
+            </strong>
         </div>
-        <div class="paragraph-container">
             <h2>Yonder</h2>
-           <video width="100%" height="350" controls> <source src="./videos/Yonder (Ident).webm" type="video/webm"> </video>    
-        </div>
+            <video width="100%" height="350" controls> <source src="./videos/Yonder (Ident).webm" type="video/webm"> </video>    
     </main>
-    <div class="break"></div>
+    <br>
     <footer>
-        <p>© 2024-2025</p>
+        Updated 2025-07-28 @ 22:55 // © 2024-2025
     </footer>
+
+<script>
+    const bannerImages = [
+        './images/Add a heading(1).gif',
+        './images/Add a heading(2).gif',
+        './images/Add a heading(3).png',
+        './images/Add a heading(4).png',
+        './images/Add a heading(5).png',
+        './images/Add a heading(6).gif',
+    ];
+    const randomImage = bannerImages[Math.floor(Math.random() * bannerImages.length)];
+    document.getElementById('random-banner').src = randomImage;
+    </script>
 </body>
 </html>
