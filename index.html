@@ -5,106 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <style>
-        header {
-            margin-top:50px;
-        }
-
+        html {
+            background-repeat: repeat;   /* tile the background image */
+            background-position: top center; /* starting point */
+            background-size: 100px;       /* don't scale the image */}
         body {
+            display: flex;
+            justify-content: center;}
+        .page {
             display: block;
             font-family: helvetica, arial, sans-serif;
             max-width: 550px;
             margin: 0 auto;
             padding: 0px 20px;
-        }
-
+            background: white;       
+            width: 100%;             
+            min-height: 100vh;}
+         header {
+            margin-top:50px;}
+        .bg-button {
+            font-family: helvetica;
+            font-size: 34px;
+            font-weight: bold;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            border: none;       /* removes default border */
+            outline: none;      /* removes focus outline (optional) */
+            margin-right: 20px;}
+        main {
+            margin-top: 20px;}
         .nav-header a {
             color:black;
             display: inline-block;
             font-size: 1rem;
             margin-right: 20px;
-            text-decoration: underline;
-        }
-
+            text-decoration: underline;}
         h2 {
-            font-size: 30px;
-        }
-
+            font-size: 30px;}
         p {
-            font-size: 1.3rem;
-        }
-
-        main {
-            margin-top: 20px;
-        }
-
-        /* customizable snowflake styling */
-        .snowflake {
-        color: #fff;
-        font-size: 1em;
-        font-family: Arial, sans-serif;
-        text-shadow: 0 0 5px #000;
-        }
- 
-        .snowflake,.snowflake .inner{animation-iteration-count:infinite;animation-play-state:running}@keyframes snowflakes-fall{0%{transform:translateY(0)}100%{transform:translateY(110vh)}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;user-select:none;cursor:default;pointer-events:none;animation-name:snowflakes-shake;animation-duration:3s;animation-timing-function:ease-in-out}.snowflake .inner{animation-duration:10s;animation-name:snowflakes-fall;animation-timing-function:linear}.snowflake:nth-of-type(0){left:1%;animation-delay:0s}.snowflake:nth-of-type(0) .inner{animation-delay:0s}.snowflake:first-of-type{left:10%;animation-delay:1s}.snowflake:first-of-type .inner,.snowflake:nth-of-type(8) .inner{animation-delay:1s}.snowflake:nth-of-type(2){left:20%;animation-delay:.5s}.snowflake:nth-of-type(2) .inner,.snowflake:nth-of-type(6) .inner{animation-delay:6s}.snowflake:nth-of-type(3){left:30%;animation-delay:2s}.snowflake:nth-of-type(11) .inner,.snowflake:nth-of-type(3) .inner{animation-delay:4s}.snowflake:nth-of-type(4){left:40%;animation-delay:2s}.snowflake:nth-of-type(10) .inner,.snowflake:nth-of-type(4) .inner{animation-delay:2s}.snowflake:nth-of-type(5){left:50%;animation-delay:3s}.snowflake:nth-of-type(5) .inner{animation-delay:8s}.snowflake:nth-of-type(6){left:60%;animation-delay:2s}.snowflake:nth-of-type(7){left:70%;animation-delay:1s}.snowflake:nth-of-type(7) .inner{animation-delay:2.5s}.snowflake:nth-of-type(8){left:80%;animation-delay:0s}.snowflake:nth-of-type(9){left:90%;animation-delay:1.5s}.snowflake:nth-of-type(9) .inner{animation-delay:3s}.snowflake:nth-of-type(10){left:25%;animation-delay:0s}.snowflake:nth-of-type(11){left:65%;animation-delay:2.5s}
-        </style>
-        <div class="snowflakes" aria-hidden="true">
-        <div class="snowflake">
-            <div class="inner">❅</div>
-        </div>
-        <div class="snowflake">
-            <div class="inner">❅</div>
-        </div>
-        <div class="snowflake">
-            <div class="inner">❅</div>
-        </div>
-        <div class="snowflake">
-            <div class="inner">❅</div>
-        </div>
-        <div class="snowflake">
-            <div class="inner">❅</div>
-        </div>
-        <div class="snowflake">
-            <div class="inner">❅</div>
-        </div>
-        <div class="snowflake">
-            <div class="inner">❅</div>
-        </div>
-        <div class="snowflake">
-            <div class="inner">❅</div>
-        </div>
-        <div class="snowflake">
-            <div class="inner">❅</div>
-        </div>
-        <div class="snowflake">
-            <div class="inner">❅</div>
-        </div>
-        <div class="snowflake">
-            <div class="inner">❅</div>
-        </div>
-        <div class="snowflake">
-            <div class="inner">❅</div>
-        </div>
-
-            </div>
+            font-size: 1.3rem;}
     </style>
 </head>
-
 <body>
+  <div class="page">
     <header>
-        <h1>Friday Night Salary Man.</h1>
+      <h1 id="cycleBtn" class="bg-button">Friday Night Salary Man.</h1>
     </header>
     <main>
-        <div class="nav-header">
-            <strong>
-                <a href="./about">About</a>
-                <a href="./archive">Archive</a>
-            </strong>
-        </div>
-            <p><img src="./images/home.png" height="275px" width="100%"></p>
+      <div class="nav-header">
+        <strong>
+          <a href="./about">About</a>
+          <a href="./blog">Blog</a>
+          <a href="./projects">Projects</a>
+          <a href="./links">Links</a>
+        </strong>
+      </div>
+      <p>
+        <img src="./images/home.png" height="275px" width="100%">
+      </p>
     </main>
-    <br>
     <footer>
-        Updated 2025-12-15 @ 18:23 // © 2024-2025
+      Updated 2025-01-14 @ 12:01 // © 2024-2026 
     </footer>
+  </div>
+    <script>
+        const backgrounds = [
+            "url('./images/nixon.png')",
+            "url('')",
+        ];
+        let currentIndex = 0;
+        document.getElementById("cycleBtn").addEventListener("click", () => {
+        document.documentElement.style.backgroundImage =
+        backgrounds[currentIndex];
+        currentIndex = (currentIndex + 1) % backgrounds.length;
+        });
+</script>
 </body>
 </html>

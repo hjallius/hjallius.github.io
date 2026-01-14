@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Projects - fridaynightsalaryman.com</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        header {
+            margin-top:50px;
+        }
+
+        body {
+            display: block;
+            font-family: helvetica, arial, sans-serif;
+            max-width: 550px;
+            margin: 0 auto;
+            padding: 0px 20px;
+        }
+
+        .nav-header a {
+            color:black;
+            display: inline-block;
+            font-size: 1rem;
+            margin-right: 20px;
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 1.3rem;
+        }
+
+        main {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="side-banner">
+            <a href="https://fridaynightsalaryman.com/"><img id="random-banner" src="" height="130px" width="100%"></a>
+        </div>
+    </header>
+    <main>
+        <div class="nav-header">
+            <strong>
+                <a href="./about">About</a>
+                <a href="./blog">Blog</a>
+                <a href="./projects">Projects</a>
+                <a href="./links">Links</a>
+            </strong>
+        </div>
+            <h2>Projects</h2>
+                
+                <p><strong>2026-01-14 <a href="./projects/jonno">Tiny Johnathan</a></strong></p>
+                <p><strong>2025-08-26 <a href="./projects/banners">Site Banners</a></strong>
+                <p><strong>2025-06-20 <a href="./projects/temptation">The Second-to-Last Temptation of Christ</a></strong></p>
+                <p><strong>2025-06-13 <a href="./projects/yonder">Yonder</a></strong></p>
+                <p><strong>2025-04-16 <a href="https://electricsigilmachine.com">The Electric Sigil Machine</a></strong></p>
+                <!--<img src="./images/up-2-1.gif"> For updated posts-->
+    </main>
+    <br>
+    <footer>
+        Updated 2025-01-14 @ 12:01 // © 2024-2026
+    </footer>
+
+<script>
+    const bannerImages = [
+        './images/Add a heading(1).gif',
+        './images/Add a heading(2).gif',
+        './images/Add a heading(3).png',
+        './images/Add a heading(4).png',
+        './images/Add a heading(5).png',
+        './images/Add a heading(6).gif',
+        './images/Add a heading(7).gif',
+        './images/Add a heading(8).gif',
+        './images/Add a heading(9).png',
+        './images/Add a heading(10).png',
+        './images/Add a heading(11).gif',
+        './images/Add a heading(12).png',
+        './images/Add a heading(13).png',
+    ];
+    const randomImage = bannerImages[Math.floor(Math.random() * bannerImages.length)];
+    document.getElementById('random-banner').src = randomImage;
+    </script>
+</body>
+</html>

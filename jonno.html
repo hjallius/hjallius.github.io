@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Archive - fridaynightsalaryman.com</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        header {
+            margin-top:50px;
+        }
+
+        body {
+            display: block;
+            font-family: helvetica, arial, sans-serif;
+            max-width: 550px;
+            margin: 0 auto;
+            padding: 0px 20px;
+        }
+
+        .nav-header a {
+            color:black;
+            display: inline-block;
+            font-size: 1rem;
+            margin-right: 20px;
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 1.3rem;
+        }
+
+        main {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="side-banner">
+            <a href="https://fridaynightsalaryman.com/"><img id="random-banner" src="" height="130px" width="100%"></a>
+        </div>
+    </header>
+    <main>
+        <div class="nav-header">
+            <strong>
+                <a href="./about">About</a>
+                <a href="./blog">Blog</a>
+                <a href="./projects">Projects</a>
+                <a href="./links">Links</a>
+                <button id="cycleBtn" class="bg-button">Change Background</button>
+            </strong>
+        </div>
+            <h2>Tiny Johnathan</h2>
+            <video width="100%" height="350" controls> <source src="./videos/2025-12-22 Tiny Johnathan Video.MP4" type="video/MP4"> </video>    
+    </main>
+    <br>
+    <footer>
+        Updated 2025-08-11 @ 12:52 // © 2024-2025
+    </footer>
+
+<script>
+    const bannerImages = [
+        './images/Add a heading(1).gif',
+        './images/Add a heading(2).gif',
+        './images/Add a heading(3).png',
+        './images/Add a heading(4).png',
+        './images/Add a heading(5).png',
+        './images/Add a heading(6).gif',
+        './images/Add a heading(7).gif',
+        './images/Add a heading(8).gif',
+        './images/Add a heading(9).png',
+        './images/Add a heading(10).png',
+        './images/Add a heading(11).gif',
+        './images/Add a heading(12).png',
+        './images/Add a heading(13).png',
+    ];
+    const randomImage = bannerImages[Math.floor(Math.random() * bannerImages.length)];
+    document.getElementById('random-banner').src = randomImage;
+
+    const backgrounds = [
+    "#ff0000",
+  "blue",
+  "rgb(255, 200, 0)",
+  "linear-gradient(to right, #ff7e5f, #feb47b)"
+  ];
+
+  let currentIndex = 0;
+
+  document.getElementById("cycleBtn").addEventListener("click", () => {
+    document.body.style.background = backgrounds[currentIndex];
+    currentIndex = (currentIndex + 1) % backgrounds.length;
+  });
+    </script>
+</body>
+</html>
