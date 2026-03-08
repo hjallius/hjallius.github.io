@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>About - fridaynightsalaryman.com</title>
+    <title>The App - fridaynightsalaryman.com</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <style>
@@ -14,7 +14,6 @@
             font-family: helvetica, arial, sans-serif;
             max-width: 550px;
             margin: 0 auto;
-            padding: 0px 20px;
         }
 
         .nav-header a {
@@ -36,6 +35,10 @@
         main {
             margin-top: 20px;
         }
+
+        video {
+            margin-top: -20px;
+        }
     </style>
 </head>
 
@@ -48,22 +51,17 @@
     <main>
         <div class="nav-header">
             <strong>
-                <a href="./about">About</a>
-                <a href="./blog">Blog</a>
-                <a href="./projects">Projects</a>
-                <a href="./links">Links</a>
+                <a href="./episodes">Episodes</a>
+                <a href="./extras">Extras</a>
+                <a href="https://fridaynightsalaryman.com/">Latest</a>
             </strong>
         </div>
-            <h2>About This Website</h2>
-            <p>Projects, notes, half-ideas, finished things, unfinished things. </p>
-            <p>Written in HTML and CSS on a second hand 2019 MacBook Pro, running Sequoia 15.0.1 using Visual Studio Code. The source code is <a href="https://github.com/hjallius/hjallius.github.io"><u>here</u></a>.</p>
-            <p>Published to the web using GitHub Pages and tested on Firefox for Mac and Safari for IOS.</p>
-            <p>No cookies, tracking or data collection.</p>
-
+            <h2>The App</h2>
+            <p><video width="100%" height="350" controls> <source src="./videos/jonno.mp4" type="video/MP4"> </video> </p>  
     </main>
     <br>
     <footer>
-        Updated 2025-01-14 @ 12:01 // © 2024-2026
+        Updated 2025-03-07 @ 09:17 // © Friday Night Salary Man 2024-2026
     </footer>
 
 <script>
@@ -84,6 +82,20 @@
     ];
     const randomImage = bannerImages[Math.floor(Math.random() * bannerImages.length)];
     document.getElementById('random-banner').src = randomImage;
+
+    const backgrounds = [
+    "#ff0000",
+  "blue",
+  "rgb(255, 200, 0)",
+  "linear-gradient(to right, #ff7e5f, #feb47b)"
+  ];
+
+  let currentIndex = 0;
+
+  document.getElementById("cycleBtn").addEventListener("click", () => {
+    document.body.style.background = backgrounds[currentIndex];
+    currentIndex = (currentIndex + 1) % backgrounds.length;
+  });
     </script>
 </body>
 </html>

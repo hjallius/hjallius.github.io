@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Archive - fridaynightsalaryman.com</title>
+    <title>Extras - fridaynightsalaryman.com</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <style>
@@ -48,18 +48,16 @@
     <main>
         <div class="nav-header">
             <strong>
-                <a href="./about">About</a>
-                <a href="./blog">Blog</a>
-                <a href="./projects">Projects</a>
-                <a href="./links">Links</a>
+                <a href="./episodes">Episodes</a>
+                <a href="./extras">Extras</a>
+                <a href="https://fridaynightsalaryman.com/">Latest</a>
             </strong>
         </div>
-            <h2>Tiny Johnathan</h2>
-            <video width="100%" height="350" controls> <source src="./videos/jonno.mp4" type="video/MP4"> </video>    
-    </main>
+            <h2>Extras</h2>
+                <p><strong>2026-01-14: <a href="./the-app">The App</a></strong></p>
     <br>
     <footer>
-        Updated 2025-08-11 @ 12:52 // © 2024-2025
+        Updated 2025-03-07 @ 09:15 // © Friday Night Salary Man 2024-2026
     </footer>
 
 <script>
@@ -80,20 +78,6 @@
     ];
     const randomImage = bannerImages[Math.floor(Math.random() * bannerImages.length)];
     document.getElementById('random-banner').src = randomImage;
-
-    const backgrounds = [
-    "#ff0000",
-  "blue",
-  "rgb(255, 200, 0)",
-  "linear-gradient(to right, #ff7e5f, #feb47b)"
-  ];
-
-  let currentIndex = 0;
-
-  document.getElementById("cycleBtn").addEventListener("click", () => {
-    document.body.style.background = backgrounds[currentIndex];
-    currentIndex = (currentIndex + 1) % backgrounds.length;
-  });
     </script>
 </body>
 </html>

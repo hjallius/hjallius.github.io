@@ -45,41 +45,35 @@
             font-size: 30px;}
         p {
             font-size: 1.3rem;}
+
+             video {
+            margin-top: -20px;
+        }
     </style>
 </head>
 <body>
   <div class="page">
     <header>
-      <h1 id="cycleBtn" class="bg-button">Friday Night Salary Man.</h1>
+      <h1>Friday Night Salary Man.</h1>
     </header>
     <main>
       <div class="nav-header">
         <strong>
-          <a href="./about">About</a>
-          <a href="./blog">Blog</a>
-          <a href="./projects">Projects</a>
-          <a href="./links">Links</a>
+          <a href="./episodes">Episodes</a>
+          <a href="./extras">Extras</a>
+          <a href="https://fridaynightsalaryman.com/">Latest</a>
         </strong>
       </div>
       <p>
-        <img src="./images/home.png" height="275px" width="100%">
+        <h3>2026-03-06: The App</h3>
+      </p>
+      <p>
+        <video width="100%" height="350" controls> <source src="./videos/jonno.mp4" type="video/MP4"> </video>  
       </p>
     </main>
     <footer>
-      Updated 2025-01-14 @ 12:01 // © 2024-2026 
+      Updated 2025-03-07 @ 09:17 // © Friday Night Salary Man 2024-2026
     </footer>
   </div>
-    <script>
-        const backgrounds = [
-            "url('./images/nixon.png')",
-            "url('')",
-        ];
-        let currentIndex = 0;
-        document.getElementById("cycleBtn").addEventListener("click", () => {
-        document.documentElement.style.backgroundImage =
-        backgrounds[currentIndex];
-        currentIndex = (currentIndex + 1) % backgrounds.length;
-        });
-</script>
 </body>
 </html>
