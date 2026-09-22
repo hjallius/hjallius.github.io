@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Archive</title>
+    <title>Tat</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
 </head>
@@ -15,6 +15,10 @@
         max-width: 550px;
         margin: 0 auto;
         font-family: helvetica, arial, sans-serif;
+        background-image:url(images/2376426_4643d.gif);
+        background-size:35%;
+        background-repeat: repeat;
+        background-position-x: center;
     }
 
     .break {
@@ -95,31 +99,102 @@
                 </div>
                 </header>
                 <br>
-                <h1 class="post-title">Archive</h1> 
+                <h1 class="post-title">Tat</h1> 
                 <div class="nav-header">
                     <strong>
                    <a href="./about">About</a>
                     <a href="./archive">Archive</a>
                     </strong>
+                    <br>
                 </div>
                 <p>Updated 2026-09-23 @ 00:03</p>
                 <div class="break"></div>
                 <div class="paragraph-container">
-                     <p><strong>@06</strong> <a href="./jokes">Joke Book</a><p>
-                    <p><strong>@05</strong> <a href="./animations">Animations</a><p>
-                    <p><strong>@04</strong> <a href="./banners">Banners</a><p>
-                    <p><strong>@03</strong> <a href="./links">Link Blog</a><p>
-                    <p><strong>@02</strong> <a href="./tat">Tat</a><p>
-                    <p><strong>@01</strong> <a href="./scrapbook">Scrapbook</a></p>
-                </div>
-            </div>
+                    <br>
+
+<style>
+    .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+
+    .photo-grid img {
+        display: block;
+        width: 100%;
+        height: 250px;
+        cursor: pointer;
+    }
+
+    /* Expanded photo */
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        cursor: default;
+    }
+</style>
+
+<div class="photo-grid">
+
+    <img src="./images/IMG_3043_Original.jpg" alt="">
+
+    <img src="./images/IMG_3214_Original.jpg" alt="">
+    <img src="./images/IMG_3286_Original.jpg" alt="">
+    <img src="./images/IMG_3287_Original.PNG" alt="">
+
+    <img src="./images/IMG_3289_Original.PNG" alt="">
+    <img src="./images/IMG_3290_Original.PNG" alt="">
+    <img src="./images/IMG_3294_Original.PNG" alt="">
+
+    <img src="./images/IMG_3296_Original.PNG" alt="">
+    <img src="./images/IMG_3298_Original.jpg" alt="">
+
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+    const photos = document.querySelectorAll(".photo-grid img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    photos.forEach(photo => {
+        photo.addEventListener("click", () => {
+            lightboxImg.src = photo.src;
+            lightbox.style.display = "flex";
+        });
+    });
+
+    lightbox.addEventListener("click", () => {
+        lightbox.style.display = "none";
+        lightboxImg.src = "";
+    });
+</script>
+
+
+              </div>
         </article>
     </main>
 
     <div class="break"></div>
 
     <footer>
-        <p>Thank you for a wonderful game of fingers.</p>
+        <p>サラリーマン</p>
     </footer>
 
     <script>
