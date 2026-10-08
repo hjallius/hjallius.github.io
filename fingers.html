@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Fingers</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{display:block;padding:0 20px;max-width:550px;margin:0 auto;font-family:helvetica,arial,sans-serif}
+.break{position:relative;height:4px}.break::after{background:#000;position:absolute;content:'';height:4px;top:0;right:0;left:0}
+.paragraph-container{line-height:1.5rem}
+li{list-style-type:square}
+.nav-header a{color:black;display:inline-block;font-size:1rem;margin-right:20px;text-decoration:underline}
+#random-banner{display:block;background:#eee}
+.win{border:2px solid #000;margin:20px 0 26px;background:#fff;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
+.win-bar{background:#000;color:#fff;font-weight:bold;padding:4px 8px;display:flex;justify-content:space-between;align-items:center}
+.win-btns i{display:inline-block;width:11px;height:11px;border:2px solid #fff;margin-left:6px}
+.win-body{position:relative;min-height:540px}
+.wrap{padding:10px 12px 12px}
+.win h1{font-size:1.3rem;text-align:center;margin:.3em 0}
+.sub{text-align:center;line-height:1.4}
+.panel{border:2px solid #000;padding:12px;margin:12px 0}
+button{font:inherit;font-weight:bold;cursor:pointer;background:#fff;color:#000;border:2px solid #000;border-radius:0;padding:6px 14px;min-width:44px}
+button:hover,button:active{background:#000;color:#fff}
+button.sel{background:#000;color:#fff}
+button.go{background:#000;color:#fff;font-size:1.1rem;padding:10px 26px}
+button.go:hover{background:#fff;color:#000}
+button:disabled{opacity:.3;cursor:default}button:disabled:hover{background:#fff;color:#000}button.go:disabled:hover{background:#000;color:#fff}
+.win input[type=text]{font:inherit;padding:6px;border:2px solid #000;border-radius:0;width:100%;background:#fff;color:#000;user-select:text;-webkit-user-select:text}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+label{display:block;margin-top:10px}
+.hero{text-align:center;margin-bottom:10px}.hero h1{display:none}
+.hands{display:flex;justify-content:center;gap:4px;margin-bottom:8px}
+.hands svg{width:16%;max-width:62px;transform-origin:50% 90%;animation:wave 1.1s ease-in-out infinite alternate}
+@keyframes wave{from{transform:rotate(-14deg)}to{transform:rotate(14deg)}}
+.top{margin:0 0 6px}
+.table{position:relative;width:100%;aspect-ratio:1/1;margin:0 auto}
+.ring{position:absolute;inset:3%;border:4px solid #000;border-radius:50%;background:#fff}
+.ring:after{content:'';position:absolute;inset:6px;border:1px dashed #000;border-radius:50%}
+.ring.tapzone{cursor:pointer;outline:3px dashed #000;outline-offset:5px}
+.center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:44%;pointer-events:none}
+.clabel{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}
+.cnum,.cd{font:bold clamp(3rem,14vw,4.6rem) helvetica,arial,sans-serif;line-height:1}
+.cnum.pop{animation:numpop .5s cubic-bezier(.3,1.8,.5,1) both}.cd{animation:cdpop .75s ease-out both}
+@keyframes numpop{from{transform:scale(.2)}to{transform:scale(1)}}
+@keyframes cdpop{0%{transform:scale(2.4);opacity:0}30%{transform:scale(1);opacity:1}100%{transform:scale(.8);opacity:.6}}
+.seat{position:absolute;transform:translate(-50%,-50%);text-align:center;min-width:72px;font-size:.78rem}
+.seat .n{display:inline-block;max-width:100%;border:1px solid #000;background:#fff;padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.seat.master .n{background:#000;color:#fff}
+.seat.out{opacity:.55}
+.seat.tap{cursor:pointer;outline:2px dashed #000;outline-offset:3px}
+.held{font:bold 2rem helvetica,arial,sans-serif;line-height:1;margin-top:10px}
+.hand{display:block;margin:0 auto;width:clamp(44px,13vw,66px)}
+.fing{transform:translateY(20px)}.fing.up{transform:none;animation:rise .45s cubic-bezier(.3,1.7,.5,1) both}
+.ghost{fill:none;stroke:#000;stroke-dasharray:3 3;opacity:.4}
+@keyframes rise{from{transform:translateY(20px)}to{transform:translateY(0)}}
+@keyframes pump{0%{transform:translateY(-6px) rotate(-4deg)}45%{transform:translateY(10px) rotate(3deg)}100%{transform:translateY(-6px) rotate(-4deg)}}
+.pump{animation:pump .75s ease-in-out infinite}
+.medal{position:absolute;top:-14px;right:-8px;font-size:1.5rem;animation:medal .7s cubic-bezier(.3,1.8,.5,1) both}
+@keyframes medal{from{transform:scale(0) rotate(-90deg)}to{transform:none}}
+.shout{position:absolute;transform:translate(-50%,-50%);width:22%;aspect-ratio:1;display:grid;place-items:center;animation:shout .55s ease-out both;z-index:3;pointer-events:none}
+.shout svg{position:absolute;inset:0;width:100%;height:100%}
+.shout span{position:relative;font:bold clamp(1.4rem,6vw,2.2rem) helvetica,arial,sans-serif;color:#000}
+@keyframes shout{0%{transform:translate(-50%,-50%) scale(.1) rotate(-25deg)}50%{transform:translate(-50%,-50%) scale(1.4) rotate(8deg)}70%{transform:translate(-50%,-50%) scale(.92) rotate(-6deg)}100%{transform:translate(-50%,-50%) scale(1) rotate(-3deg)}}
+.log{text-align:center;font-size:.9rem;margin:6px 0}
+.dock{border-top:2px solid #000;margin-top:8px;padding-top:10px;text-align:center}
+.hint{margin-bottom:6px}
+ol{padding-left:1.4em}.win li{margin:4px 0}.lose{font-weight:bold;text-decoration:underline}
+.help{position:absolute;inset:0;background:#fffffff2;z-index:20;overflow:auto;padding:12px}
+.help .card{border:2px solid #000;background:#fff;padding:14px 16px;max-width:440px;margin:0 auto;line-height:1.4;font-size:.95rem}
+.help h2{margin:0 0 8px;text-align:center}.help h3{margin:12px 0 4px}.help ul,.help ol{margin:0;padding-left:1.3em}
+
+.seat.tap{outline:none}
+.medal{font-size:.7rem;font-weight:bold;background:#000;color:#fff;padding:1px 6px;top:-6px;right:-2px;white-space:nowrap}
+.wrap{padding-top:44px}
+.fsb{position:absolute;top:8px;right:8px;z-index:30;padding:4px 10px;font-size:.8rem}
+body.nofs{overflow:hidden}
+.win.full{position:fixed;inset:0;z-index:1000;margin:0;border:0;box-shadow:none;display:flex;flex-direction:column;overflow:auto}
+.win.full .win-body{flex:1;min-height:0;display:flex}
+.win.full .wrap{flex:1;display:flex;flex-direction:column;max-width:640px;width:100%;margin:0 auto;padding-bottom:max(12px,env(safe-area-inset-bottom,0px))}
+.win.full .table{width:min(100%,calc(100vh - 240px));margin:auto}
+@supports (height:100dvh){.win.full .table{width:min(100%,calc(100dvh - 240px))}}
+.win.full .dock{margin-top:8px}
+.ring{inset:0}
+.top{position:absolute;top:8px;left:8px;z-index:30;margin:0}
+.top button{padding:4px 10px;font-size:.8rem}
+.ring{inset:10px}
+.table{margin:0 auto 12px}
+.win input[type=text]{box-sizing:border-box;max-width:100%}
+</style>
+</head>
+<body>
+<main><article><div class="post-container">
+<header><br><div class="side-banner"><a href="https://fridaynightsalaryman.com/"><img id="random-banner" alt="" src="" height="130px" width="100%"></a></div></header>
+<br>
+<h1 class="post-title">Fingers</h1>
+<div class="nav-header"><strong><a href="./about">About</a> <a href="./archive">Archive</a></strong></div>
+<p>Updated 2026-10-08 @ 12:25</p>
+<div class="break"></div>
+<div class="paragraph-container">
+<p>Two to eight players. Guess how many fingers are on the table.</p>
+<div class="win"><div class="win-body"><button id="fs" class="fsb">Full screen</button><div class="wrap" id="app"></div></div></div>
+</div>
+</div></article></main>
+<div class="break"></div>
+<footer><p>Thank you for a wonderful game of fingers.</p></footer>
+<script>
+const bannerImages=['./images/Add a heading(1).gif','./images/Add a heading(2).gif','./images/Add a heading(3).png','./images/Add a heading(4).png','./images/Add a heading(5).png','./images/Add a heading(6a).gif','./images/Add a heading(7).gif','./images/Add a heading(8).gif','./images/Add a heading(9).png','./images/Add a heading(10).png','./images/Add a heading(11).gif','./images/Add a heading(12).png','./images/Add a heading(13).png'];
+document.getElementById('random-banner').src=bannerImages[Math.floor(Math.random()*bannerImages.length)];
+</script>
+<script>
+let helpOpen=false,CD=null,quitAt=0,S=null,cpuN=3,myName="You";
+const app=document.getElementById('app');
+const NAMES=["Alex","Bea","Cass","Dev","Ede","Finn","Gus"];
+const rnd=n=>Math.floor(Math.random()*(n+1));
+const active=()=>S.players.filter(p=>p.fingers>0);
+const totalIn=()=>S.players.reduce((a,p)=>a+p.fingers,0);
+
+function heroHands(){
+  return `<div class="hands">`+[2,1,1,1,2].map((h,i)=>{
+    let f='';for(let k=0;k<2;k++)f+=`<rect x="${15+k*18}" y="${k<h?6:31}" width="12" height="32" rx="6" fill="#fff" stroke="#000" stroke-width="2"/>`;
+    return `<svg viewBox="0 0 60 64" style="animation-delay:${i*.18}s">${f}<rect x="10" y="30" width="40" height="26" rx="13" fill="#fff" stroke="#000" stroke-width="2"/><rect x="12" y="52" width="36" height="12" rx="3" fill="#000"/></svg>`}).join('')+`</div>`;
+}
+function setup(){
+  app.innerHTML=`<div class="hero">${heroHands()}<h1>Fingers</h1><div class="sub">Guess the total number of fingers held out. Be right and you lose a finger — lose both and you win!</div></div>
+  <div class="panel"><label>Your name</label><input type="text" id="nm" value="${myName}" maxlength="12">
+  <label>CPU players (2–8 players in total)</label><div class="row" id="cp">${[1,2,3,4,5,6,7].map(n=>`<button data-n="${n}" class="${n==cpuN?'sel':''}">${n}</button>`).join('')}</div>
+  <div style="text-align:center;margin-top:14px"><button class="go" id="st">Start game</button></div>
+  <div style="text-align:center;margin-top:14px"><button id="hp">How to play</button></div></div>`;
+  document.getElementById('cp').onclick=e=>{if(e.target.dataset.n){cpuN=+e.target.dataset.n;setup_keep()}};
+  document.getElementById('hp').onclick=()=>{myName=document.getElementById('nm').value;helpOpen=true;setup()};
+  if(helpOpen){app.insertAdjacentHTML('beforeend',`<div class="help"><div class="card"><h2>How to play</h2>
+  <ol><li>Everyone starts with <b>2 fingers</b> in the game (2–8 players).</li>
+  <li>Each round, the <b>finger master</b> (shown with a black name tag) guesses the <b>total number of fingers</b> everyone will hold out.</li>
+  <li>Every player chooses how many of their fingers to hold out — 0, 1 or 2 (never more than they have left). Count 3, 2, 1… reveal!</li>
+  <li>If the master guessed <b>exactly right</b>, they lose a finger from the game. If not, nothing happens.</li>
+  <li>The turn passes clockwise.</li>
+  <li>Lose both fingers and you're <b>out — that's a win</b>! first out takes 1st place, and so on</li>
+  <li>The last player left with a finger is the <b>loser</b>.</li></ol>
+  <h3>Controls</h3>
+  <ul><li><b>Tap your hand</b> to raise fingers (it glows gold on your turn).</li>
+  <li>As finger master, <b>tap the table</b> to raise your guess. After the highest number it wraps back to 0.</li>
+  <li>Press <b>GO</b> to start the countdown.</li></ul>
+  <div style="text-align:center;margin-top:12px"><button class="go" id="hc">Got it!</button></div></div></div>`);
+    document.getElementById('hc').onclick=()=>{helpOpen=false;setup()}}
+  document.getElementById('st').onclick=()=>{myName=document.getElementById('nm').value.trim()||"You";start()};
+}
+function setup_keep(){myName=document.getElementById('nm').value;setup()}
+
+function start(){
+  const ps=[{name:myName,cpu:false,fingers:2,rank:0}];
+  for(let i=0;i<cpuN;i++)ps.push({name:NAMES[i]+" (CPU)",cpu:true,fingers:2,rank:0});
+  S={hist:ps.map(()=>[0,0,0]),players:ps,master:0,phase:'pick',hold:0,guess:null,finished:[],held:null,count:0,log:"Choose how many fingers to hold out.",round:1,loser:null};
+  render();
+}
+
+function render(){
+  if(S.phase==='over')return over();
+  const n=S.players.length,m=S.players[S.master],me=S.players[0];
+  const seats=S.players.map((p,i)=>{
+    const a=Math.PI/2+i*2*Math.PI/n,x=50+34*Math.cos(a),y=50+34*Math.sin(a);
+    const held=S.held&&S.held[i]!=null?`<div class="held">${S.held[i]}</div>`:'';
+    return `<div class="seat ${i==S.master&&!p.out?'master':''} ${p.fingers==0?'out':''} ${i==0&&S.phase==='pick'&&p.fingers>0?'tap':''}" style="left:${x}%;top:${y}%">
+      ${p.fingers==0&&p.rank<=3?`<div class="medal">${['1st','2nd','3rd'][p.rank-1]}</div>`:''}
+      <div class="n">${p.name}</div>
+      ${hand(i,p)}
+      ${p.fingers==0?'<div>Out #'+p.rank+'</div>':held}</div>`;
+  }).join('');
+  let bubble='';
+  if(S.phase==='result'){
+    const a=Math.PI/2+S.master*2*Math.PI/n,x=50+22*Math.cos(a),y=50+22*Math.sin(a);
+    let pts='';for(let k=0;k<24;k++){const r=k%2?36:50,t=k*Math.PI/12;pts+=(50+r*Math.cos(t)).toFixed(1)+','+(50+r*Math.sin(t)).toFixed(1)+' '}
+    bubble=`<div class="shout" style="left:${x}%;top:${y}%"><svg viewBox="0 0 100 100"><polygon points="${pts}" fill="#fff" stroke="#000" stroke-width="3" stroke-linejoin="round"/></svg><span>${S.guess}!</span></div>`;
+  }
+  const info=`<div class="cinfo">Round <b>${S.round}</b> · Fingers in <b>${totalIn()}</b></div>`;
+  const center=S.phase==='count'?`<div class="cd ${S.count==='SHOW!'?'show':''}">${S.count}</div>`:
+    S.phase==='result'?`<div class="clabel">Total held out</div><div class="cnum pop">${S.total}</div>`:
+    (S.master===0?`<div class="clabel">Your guess</div><div class="cnum ${S.guess!==null?'pop':''}" style="${S.guess===null?'opacity:.5':''}">${S.guess===null?'?':S.guess}</div>`:`<div class="clabel">Total held out</div><div class="cnum" style="opacity:.5">?</div>`);
+  let ctl='';
+  if(S.phase==='pick'){
+    const isM=S.master===0;
+    if(me.fingers>0)ctl+=`<div class="hint">Tap your hand to raise fingers — <b>${S.hold}</b> up</div>`;
+    if(isM)ctl+=`<div class="hint">You're the finger master — tap the table to raise your guess</div>`;
+    else ctl+=`<div class="hint">${m.name} is the finger master.</div>`;
+    const ready=(me.fingers==0||S.hold!==null)&&(!isM||S.guess!==null);
+    ctl+=`<div style="text-align:center;margin-top:10px"><button class="go" id="go" ${ready?'':'disabled'}>${me.fingers==0?'Play round':'Count 3, 2, 1!'}</button></div>`;
+  }else if(S.phase==='result'){
+    ctl=`<div style="text-align:center"><button class="go" id="nx">Next round</button></div>`;
+  }
+  app.innerHTML=`<div class="top"><button id="home" class="${Date.now()-quitAt<3000?'sel':''}">${Date.now()-quitAt<3000?'Quit game? Tap again':'Home'}</button></div><div class="table"><div class="ring"></div>${seats}${bubble}<div class="center">${center}</div></div>
+  ${S.phase==='result'?`<div class="log">${S.log}</div>`:''}<div class="dock">${ctl||'<div class="hint">Get ready…</div>'}</div>`;
+  app.querySelectorAll('[data-h]').forEach(b=>b.onclick=()=>{S.hold=+b.dataset.h;render()});
+  app.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{S.guess=+b.dataset.g;render()});
+  const tp=app.querySelector('.seat.tap');if(tp)tp.onclick=()=>{S.hold=(S.hold+1)%(S.players[0].fingers+1);render()};
+  if(S.phase==='pick'&&S.master===0){const rg=app.querySelector('.ring');rg.classList.add('tapzone');
+    rg.onclick=()=>{S.guess=S.guess===null?0:(S.guess+1)%(totalIn()+1);render()};
+    const mi=document.getElementById('minus');if(mi)mi.onclick=()=>{S.guess=S.guess===null?totalIn():(S.guess+totalIn())%(totalIn()+1);render()}}
+  document.getElementById('home').onclick=()=>{
+    if(Date.now()-quitAt<3000){clearInterval(CD);S=null;quitAt=0;return setup()}
+    quitAt=Date.now();const b=document.getElementById('home');b.textContent='Quit game? Tap again';b.classList.add('sel');
+    setTimeout(()=>{const b=document.getElementById('home');if(b&&Date.now()-quitAt>=3000){b.textContent='Home';b.classList.remove('sel')}},3100)};
+  const go=document.getElementById('go');if(go)go.onclick=countdown;
+  const nx=document.getElementById('nx');if(nx)nx.onclick=next;
+}
+
+function hand(i,p){
+  const h=S.held?S.held[i]||0:(i==0&&S.phase==='pick'&&S.hold!=null?S.hold:0);
+  let f='';
+  for(let k=0;k<2;k++){const x=15+k*18;
+    f+=k>=p.fingers?`<rect class="ghost" x="${x}" y="28" width="12" height="26" rx="6"/>`
+     :`<rect class="fing ${k<h?'up':''}" x="${x}" y="6" width="12" height="32" rx="6" fill="#fff" stroke="#000" stroke-width="2"/>`}
+  return `<svg class="hand ${S.phase==='count'&&p.fingers>0?'pump':''}" viewBox="0 0 60 64" width="54">${f}<rect x="10" y="30" width="40" height="26" rx="13" fill="${p.fingers>0?'#fff':'#ddd'}" stroke="#000" stroke-width="2"/><rect x="12" y="52" width="36" height="12" rx="3" fill="#000"/></svg>`;
+}
+// CPU brain: model each opponent's hold-out habits (recency-weighted), convolve into a distribution of the total
+function dist(i){const p=S.players[i];if(p.fingers==0)return[1];const h=S.hist[i];const a=[];for(let k=0;k<=p.fingers;k++)a.push(h[k]+.7);const t=a.reduce((x,y)=>x+y);return a.map(x=>x/t)}
+function conv(a,b){const r=Array(a.length+b.length-1).fill(0);a.forEach((x,i)=>b.forEach((y,j)=>r[i+j]+=x*y));return r}
+function bestGuess(mi,mine){let d=[1];S.players.forEach((p,i)=>{if(i!=mi)d=conv(d,dist(i))});const j=d.map(v=>v+Math.random()*.01);return mine+j.indexOf(Math.max(...j))}
+function countdown(){
+  S.phase='count';S.count=3;S.log="Get ready…";S.held=null;render();
+  const t=CD=setInterval(()=>{S.count--;if(S.count<=0){clearInterval(t);reveal()}else render()},750);
+}
+
+function reveal(){
+  const holds=S.players.map((p,i)=>{
+    if(p.fingers==0)return null;
+    if(i==0)return S.hold;
+    return rnd(p.fingers);
+  });
+  const total=holds.reduce((a,h)=>a+(h||0),0);
+  if(S.master!==0){
+    S.guess=Math.min(totalIn(),bestGuess(S.master,holds[S.master]));
+  }
+  holds.forEach((h,i)=>{if(h!=null){S.hist[i]=S.hist[i].map(x=>x*.85);S.hist[i][h]+=1}});
+  S.held=holds;S.total=total;
+  const m=S.players[S.master];
+  if(S.guess===total){
+    m.fingers--;
+    S.log=`${m.name} guessed right and removes a finger!`;
+    if(m.fingers==0){S.finished.push(m);m.rank=S.finished.length;S.log+=` ${m.name} is out and has won place #${m.rank}!`}
+  }else S.log=`${m.name} guessed ${S.guess}, but the total was ${total}.`;
+  S.phase='result';
+  if(active().length<=1){
+    const l=active()[0];if(l){S.loser=l;l.rank=S.players.length}
+    S.phase='result';S.final=true;
+  }
+  render();
+}
+
+function next(){
+  if(S.final){S.phase='over';return render()}
+  let i=S.master;
+  do{i=(i+1)%S.players.length}while(S.players[i].fingers==0);
+  S.master=i;S.round++;S.hold=0;S.guess=null;S.held=null;S.phase='pick';
+  S.log=`${S.players[i].name} is now the finger master.`;
+  render();
+}
+
+function over(){
+  const order=[...S.finished,S.loser].filter(Boolean);
+  app.innerHTML=`<h1>Game over</h1><div class="panel"><ol>${order.map((p,i)=>`<li class="${p===S.loser?'lose':''}">${p.name} ${i==0?'':''}${p===S.loser?' — the loser ':''}</li>`).join('')}</ol>
+  <div style="text-align:center"><button class="go" id="again">Play again</button></div></div>`;
+  document.getElementById('again').onclick=setup;
+}
+setup();
+
+const win=document.querySelector('.win'),fsb=document.getElementById('fs');
+function setFS(on){win.classList.toggle('full',on);document.body.classList.toggle('nofs',on);fsb.textContent=on?'Exit full screen':'Full screen';
+  if(on&&win.requestFullscreen)win.requestFullscreen().catch(()=>{});
+  if(!on&&document.fullscreenElement)document.exitFullscreen().catch(()=>{})}
+fsb.onclick=()=>setFS(!win.classList.contains('full'));
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement&&win.classList.contains('full'))setFS(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&win.classList.contains('full'))setFS(false)});
+</script>
+</body>
+</html>
